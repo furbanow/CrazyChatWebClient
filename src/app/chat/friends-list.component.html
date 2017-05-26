@@ -1,0 +1,16 @@
+<div>
+    <table class="table table-hover" *ngIf="friends && friends.length > 0">
+        <tbody>
+            <tr *ngFor="let friend of friends" class={{getContextualStateCss(friend)}} (click)="onReceiverClick(friend)" >
+                <td>
+                    <img src="{{friend.ImageUrl}}" 
+                        class="img-thumbnail" 
+                        alt="{{friend.Name}} picture" 
+                        width="{{imageWidth}}">
+                </td>
+                <td>{{friend.Name}}</td>
+                <td>{{friend.State}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

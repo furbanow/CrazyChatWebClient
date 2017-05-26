@@ -1,0 +1,17 @@
+<div class="panel">
+    <div class="panel-heading">
+        <div class="well" *ngIf="selectedRecipient" >Discussion with {{selectedRecipient.Name}}</div>
+        <div class="well" *ngIf="!selectedRecipient" >Select a discussion</div>
+    </div>
+    <div style="max-height: 350px;overflow-y: scroll;" id="cc-message-list-container">
+        <table class="table" *ngIf="messages && messages.length > 0">
+            <tbody>
+                <tr *ngFor="let message of messages">
+                    <td>{{message.Sender.Name}}:</td>
+                    <td>{{message.Content}}</td>
+                    <td>{{message.SentDateTime}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

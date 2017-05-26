@@ -1,0 +1,19 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <cc-friends-list (onReceiverSelected)="onRecipientSelected($event)"></cc-friends-list>
+            </div>
+            <div class="col-md-8">
+                <cc-message-list [selectedRecipient]="selectedRecipient" [messages]="messages"></cc-message-list>
+            </div>
+        </div>
+        <div class="row">
+           <cc-message-sender [selectedRecipient]="selectedRecipient" (onMessageSent)="refreshMessages()"></cc-message-sender>
+        </div>
+        
+    </div>
+</div>
